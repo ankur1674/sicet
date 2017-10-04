@@ -5,6 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.util.List;
+
+import ankur.com.connmanager.DatabaseAccess;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,13 +51,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+//        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+//        databaseAccess.open();
+//        List<String> quotes = databaseAccess.getRollNums();
+//        databaseAccess.close();
+//        System.out.println(quotes.get(0).toString());
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         android.support.v4.app.FragmentManager fragmentManager=getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction transaction=fragmentManager.beginTransaction();
         transaction.replace(R.id.content,new HomeFragment()).commit();
+
     }
 
 }

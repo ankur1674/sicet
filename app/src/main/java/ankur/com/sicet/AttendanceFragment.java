@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.List;
+
+import ankur.com.connmanager.DatabaseAccess;
 import ankur.com.connmanager.manager;
 
 
@@ -73,7 +76,8 @@ public class AttendanceFragment extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_attendance, container, false);
         Button btnSubmit=(Button)view.findViewById(R.id.button);
-        new manager().RunQuery();
+
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +94,7 @@ public class AttendanceFragment extends Fragment {
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
-        new manager().RunQuery();
+        //new manager().RunQuery();
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
